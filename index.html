@@ -27,12 +27,14 @@
 				<li>Its provide the visibility to the business people to know about their sales and product stock.</li>
 				<li>This is used to findout max and min sales by product over month on month.</li>
 				<li>Using this we are able to know each category sales for particular month.</li>
-				<li>And also we can  findout overall sales for a particular category.Find Min and Max data of sales.</li>i>
+				<li>And also we can  findout overall sales for a particular category.Find Min and Max data of sales.</li>
 			</div>
 		</div><br><br>
 		<div class="heat_sales">
 			<h2>Footfall Count</h2>
 			<div id="visitorsMall"></div>
+			<li>It helps to provide the information about how many ppl stepping into the mall.</li>
+			<li>We can find out people count on particular hour over day.</li>
 		</div>
 	</div>
 	
@@ -46,15 +48,15 @@
 <script type="text/javascript">
 	
 	var data = [
-		{ "SalesDate" : '2018-01-01', "Food" : 15, "SoftDrinks" : 45, "HotDrinks" : 10, "IceCreams" : 20 },
-		{ "SalesDate" : '2018-02-01', "Food" : 25, "SoftDrinks" : 50, "HotDrinks" : 10, "IceCreams" : 10 },
-		{ "SalesDate" : '2018-03-01', "Food" : 35, "SoftDrinks" : 55, "HotDrinks" : 20, "IceCreams" : 30 },
-		{ "SalesDate" : '2018-04-01', "Food" : 10, "SoftDrinks" : 60, "HotDrinks" : 25, "IceCreams" : 80 },
-		{ "SalesDate" : '2018-05-01', "Food" : 18, "SoftDrinks" : 65, "HotDrinks" : 30, "IceCreams" : 20 },
-		{ "SalesDate" : '2018-06-01', "Food" : 28, "SoftDrinks" : 70, "HotDrinks" : 40, "IceCreams" : 50 },
-		{ "SalesDate" : '2018-07-01', "Food" : 38, "SoftDrinks" : 52, "HotDrinks" : 47, "IceCreams" : 23 },
-		{ "SalesDate" : '2018-08-01', "Food" : 45, "SoftDrinks" : 59, "HotDrinks" : 55, "IceCreams" : 56 },
-		{ "SalesDate" : '2018-09-01', "Food" : 76, "SoftDrinks" : 55, "HotDrinks" : 22, "IceCreams" : 34 }
+		{ "Month" : '2018-01-01', "Food" : 15, "SoftDrinks" : 45, "HotDrinks" : 10, "IceCreams" : 20 },
+		{ "Month" : '2018-02-01', "Food" : 25, "SoftDrinks" : 50, "HotDrinks" : 10, "IceCreams" : 10 },
+		{ "Month" : '2018-03-01', "Food" : 35, "SoftDrinks" : 55, "HotDrinks" : 20, "IceCreams" : 30 },
+		{ "Month" : '2018-04-01', "Food" : 10, "SoftDrinks" : 60, "HotDrinks" : 25, "IceCreams" : 80 },
+		{ "Month" : '2018-05-01', "Food" : 18, "SoftDrinks" : 65, "HotDrinks" : 30, "IceCreams" : 20 },
+		{ "Month" : '2018-06-01', "Food" : 28, "SoftDrinks" : 70, "HotDrinks" : 40, "IceCreams" : 50 },
+		{ "Month" : '2018-07-01', "Food" : 38, "SoftDrinks" : 52, "HotDrinks" : 47, "IceCreams" : 23 },
+		{ "Month" : '2018-08-01', "Food" : 45, "SoftDrinks" : 59, "HotDrinks" : 55, "IceCreams" : 56 },
+		{ "Month" : '2018-09-01', "Food" : 76, "SoftDrinks" : 55, "HotDrinks" : 22, "IceCreams" : 34 }
 	]
 		
 	function tabulate(data, columns) {
@@ -105,7 +107,7 @@
 	}
 
 	// render the tables
-	tabulate(data, ['SalesDate', 'Food','SoftDrinks', 'HotDrinks', 'IceCreams']); //  column table
+	tabulate(data, ['Month', 'Food','SoftDrinks', 'HotDrinks', 'IceCreams']); //  column table
 
 </script>
 
