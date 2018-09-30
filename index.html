@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dashboard</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+
+		<link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+  
+	<nav class="navbar navbar-default fixed-top" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Dashboard</a>
+		</div>
+	</nav>
+  
+	<div class="container">
+		<div class="table_sales">
+			<h2>Sales by Category (MOM)</h2>
+			<div class="table-responsive">
+				<div id="table-data"></div>
+				<li>Find Min and Max data of sales.</li>
+				<li></li>
+			</div>
+		</div><br><br>
+		<div class="heat_sales">
+			<h2>Footfall Count</h2>
+			<div id="visitorsMall"></div>
+		</div>
+	</div>
+	
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+		<script src="visitors.js"></script>
+		<script src="script.js"></script>
+	
+  </body>
+
+<script type="text/javascript">
+	
+	var data = [
+		{ "SalesDate" : '2018-01-01', "Food" : 15, "SoftDrinks" : 45, "HotDrinks" : 10, "IceCreams" : 20 },
+		{ "SalesDate" : '2018-02-01', "Food" : 25, "SoftDrinks" : 50, "HotDrinks" : 10, "IceCreams" : 10 },
+		{ "SalesDate" : '2018-03-01', "Food" : 35, "SoftDrinks" : 55, "HotDrinks" : 20, "IceCreams" : 30 },
+		{ "SalesDate" : '2018-04-01', "Food" : 10, "SoftDrinks" : 60, "HotDrinks" : 25, "IceCreams" : 80 },
+		{ "SalesDate" : '2018-05-01', "Food" : 18, "SoftDrinks" : 65, "HotDrinks" : 30, "IceCreams" : 20 },
+		{ "SalesDate" : '2018-06-01', "Food" : 28, "SoftDrinks" : 70, "HotDrinks" : 40, "IceCreams" : 50 },
+		{ "SalesDate" : '2018-07-01', "Food" : 38, "SoftDrinks" : 52, "HotDrinks" : 47, "IceCreams" : 23 },
+		{ "SalesDate" : '2018-08-01', "Food" : 45, "SoftDrinks" : 59, "HotDrinks" : 55, "IceCreams" : 56 },
+		{ "SalesDate" : '2018-09-01', "Food" : 76, "SoftDrinks" : 55, "HotDrinks" : 22, "IceCreams" : 34 }
+	]
+		
+	function tabulate(data, columns) {
+		var table = d3.select('#table-data').append('table').attr("class","table table-hover table-striped table-bordered")
+		var thead = table.append('thead')
+		var	tbody = table.append('tbody');
+
+		// append the header row
+		thead.append('tr')
+		  .selectAll('th')
+		  .data(columns).enter()
+		  .append('th')
+			.text(function (column) { return column; });
+
+		// create a row for each object in the data
+		var rows = tbody.selectAll('tr')
+		  .data(data)
+		  .enter()
+		  .append('tr');
+
+		// create a cell in each row for each column
+		var cells = rows.selectAll('td')
+		  .data(function (row) {
+			return columns.map(function (column) {
+			  return {column: column, value: row[column]};
+			});
+		  })
+		  .enter()
+		  .append('td')
+		  .text(function (d) { 
+				if(d.column == 'SalesDate'){
+					return d.value;
+				} else {
+					return d.value + '%';
+				}
+		  })
+		  .append("svg")
+		  .attr("width", 71)
+		  .attr("height", 12)
+		  .append("g")
+		 .append("rect")
+		  .attr("height", 12)
+		  .attr("width", function(d) { return d.value; })
+		  .attr("x", 10)
+		  .attr("fill", "#008080")
+
+	  return table;
+	}
+
+	// render the tables
+	tabulate(data, ['SalesDate', 'Food','SoftDrinks', 'HotDrinks', 'IceCreams']); //  column table
+
+</script>
+
+</html>

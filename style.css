@@ -1,0 +1,97 @@
+	tbody tr:hover rect {
+	  fill: brown;
+	}
+	
+	table th{
+		background-color:blue;
+		color:#ffffff;
+	}
+    .arc text {
+        font: 10px sans-serif;
+        text-anchor: middle;
+    }
+
+    .arc path {
+        stroke: #fff;
+    }
+
+    .title {
+        fill: teal;
+        font-weight: bold;
+    }
+		
+	.timeLabel, .dayLabel {
+		    font-size: 1.6rem;
+		    fill: #AAAAAA;
+		    font-weight: 300;
+		}
+
+		text.axis-workweek, text.axis-worktime {
+		    fill: #404040;
+		    font-weight: 400;
+		}
+
+		.title {
+		    font-size: 2.8rem;
+		    fill: #4F4F4F;
+		    font-weight: 300;
+		}
+
+		.subtitle {
+		    font-size: 1.4rem;
+		    fill: #AAAAAA;
+		    font-weight: 300;
+		}
+		  
+		.credit {
+		    font-size: 1.2rem;
+		    fill: #AAAAAA;
+		    font-weight: 400;
+		}
+
+		.axis path, .axis tick, .axis line {
+		      fill: none;
+		      stroke: none;
+		  }
+
+		text {
+		      font-size: 1.2rem;
+		      font-weight: 400;
+		}
+
+		.legendTitle {
+		      font-size: 1.6rem;
+		      font-weight: 300;
+		}
+		
+		
+		     .d3-tip {
+        font-family: Verdana;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        color: #fff; 
+        z-index: 5070;
+      }
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+	float:none;
+	font-size: 35px;
+}
+
+.table_sales {
+	border:2px solid #f8f8f8;
+	padding:20px 30px 20px;
+	box-shadow: 5px 10px #f8f8f8;
+}
+
+.heat_sales {
+	border:2px solid #f8f8f8;
+	padding:0px 30px 0px;
+	box-shadow: 5px 10px #f8f8f8;
+}
